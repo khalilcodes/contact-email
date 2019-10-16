@@ -26,16 +26,16 @@ app.use("/contact",express.static('Views'));
 
 app.post("/email", (req,res)=> {
     let transporter = nodemailer.createTransport({
-        host: 'mail.khalil.codes',
+        host: 'smtp.gmail.com',
         port: 465,
         secure: true,
         auth: {
-            user: "me@khalil.codes",
-            pass: "khalilali123"
+            user: "passionateminds.in@gmail.com",
+            pass: "Khalilali@123"
         }
     });
     transporter.sendMail({
-        from: '"Khalil Ali 👻" <me@khalil.codes>',
+        from: '"Khalil Ali" <passionateminds.in@gmail.com>',
         to: `${req.body.email}`,
         subject: 'Test Mail ✔',
         text: 'Hi ...',
