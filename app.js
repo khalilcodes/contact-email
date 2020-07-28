@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -31,7 +32,7 @@ app.post("/email", (req,res)=> {
         secure: true,
         auth: {
             user: "passionateminds.in@gmail.com",
-            pass: "Khalilali@123"
+            pass: `${process.env.EMAIL_PASS}`
         }
     });
     transporter.sendMail({
